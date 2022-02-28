@@ -1,15 +1,54 @@
-## Welcome to GitHub Pages
+# Welcome to Duke Ibrahimramos bot
 
-You can use the [editor on GitHub](https://github.com/ibrahimisramos/ip/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Duke is a CLI app that helps **track the various tasks of different types such as Todo, Deadlines and Events**.  It will be useful for computer geeks who love to type fast. 
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+##Summary of user guide
+1. Quick start
+2. Features
+3. FAQ
+4. Command summary
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+###Quick Start
+
+1. Ensure you have Java 11 or above installed in your Computer.
+2. Download the latest ip.jar from here.
+3. Copy the file to the folder you want to use as the home folder for your application.
+4. Run file on Terminal using `java -jar ip.jar`.
+5. Type the command in the command box and press Enter to execute it. e.g. typing help and pressing Enter will open the help window.
+Some example commands you can try:
+
+```
+1. Listing all task: `list`
+2. Adding a todo task: `todo`
+3. Adding a deadline task: `deadline`
+4. Adding a event task: `event`
+5. Mark a task as complete: `mark`
+6. Mark a task as incomplete: `unmark`
+7. Deleting a task: `delete`
+8. Find a task: `find`
+9. Exiting the program: `exit`
+```
+
+### Features
+
+list : Lists all tasks.
+todo:  todo read book : Adds todo task of read book
+deadline:  deadline return book /by 2019-10-15 1800 : Adds deadline task of read book due by “2019-10-15 1800”
+event:  event attend CS2113T lecture /at Friday 4-6pm : Adds todo task of read book
+
+mark 2 : Mark 2nd task in current list as complete
+unmark 1 : Mark 1st task in current list as complete
+delete 2 : Deletes 2nd task in current list.
+find: Find tasks matching string input of user.
+exit: Exits the app.
+
 
 ```markdown
 Syntax highlighted code block
+
+# Duke User Guide (Ibrahimramos version)
+
 
 # Header 1
 ## Header 2
