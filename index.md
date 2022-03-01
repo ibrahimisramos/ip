@@ -1,76 +1,211 @@
-# Welcome to Duke Ibrahimramos bot
+# Duke Bot User Guide
 
-Duke is a CLI app that helps **track the various tasks of different types such as Todo, Deadlines and Events**.  It will be useful for computer geeks who love to type fast. 
+## Features in app
 
-##Summary of user guide
-1. Quick start
-2. Features
-3. FAQ
-4. Command summary
+### Create, list, delete and find tasks of types todo, deadline and event
+
+### Mark a task as complete/incomplete
+
+Mark your task as complete or incomplete as deemed necessary
 
 
-###Quick Start
+### Store tasks data locally
 
-1. Ensure you have Java 11 or above installed in your Computer.
-2. Download the latest ip.jar from here.
-3. Copy the file to the folder you want to use as the home folder for your application.
-4. Run file on Terminal using `java -jar ip.jar`.
-5. Type the command in the command box and press Enter to execute it. e.g. typing help and pressing Enter will open the help window.
-Some example commands you can try:
+Store the data into a text file so that you dont need to retype
+
+## Usage of commands
+
+### **command:** `todo`
+
+**Format:** `todo TASK_DESCRIPTION` - Create a new task of type todo
+
+**Description of command :**  Add a todo task with a description.
+
+Example of usage: 
+
+`todo read book`
+
+Expected outcome:
+
+Acknowledgement and total number of tasks in list.
 
 ```
-1. Listing all task: `list`
-2. Adding a todo task: `todo`
-3. Adding a deadline task: `deadline`
-4. Adding a event task: `event`
-5. Mark a task as complete: `mark`
-6. Mark a task as incomplete: `unmark`
-7. Deleting a task: `delete`
-8. Find a task: `find`
-9. Exiting the program: `exit`
+Got it. I've added this task:
+[T][ ] read book
+Now you have 1 tasks in the list.
+```
+### **command:** `deadline`
+
+**Format:** `deadline TASK_DESCRIPTION /by DUE_DATE DUE_TIME` - Create a new task of type deadline
+
+**Description of command :**  Add a deadline task with a description.
+
+Example of usage: 
+
+`deadline return book /by 2019-10-15 1800`
+
+Expected outcome:
+
+Acknowledgement and total number of tasks in list.
+
+```
+Got it. I've added this task:
+[D][ ] return book (by: Oct 15 2019)
+Now you have 2 tasks in the list.
 ```
 
-### Features
+### **command:** `event`
 
-list : Lists all tasks.
-todo:  todo read book : Adds todo task of read book
-deadline:  deadline return book /by 2019-10-15 1800 : Adds deadline task of read book due by “2019-10-15 1800”
-event:  event attend CS2113T lecture /at Friday 4-6pm : Adds todo task of read book
+**Format:** `event TASK_DESCRIPTION /at DAY TIME` - Create a new task of type event
 
-mark 2 : Mark 2nd task in current list as complete
-unmark 1 : Mark 1st task in current list as complete
-delete 2 : Deletes 2nd task in current list.
-find: Find tasks matching string input of user.
-exit: Exits the app.
+**Description of command :**  Add a event task with a description.
 
+Example of usage: 
 
-```markdown
-Syntax highlighted code block
+`event attend CS2113T lecture /at Friday 4-6pm`
 
-# Duke User Guide (Ibrahimramos version)
+Expected outcome:
 
+Acknowledgement and total number of tasks in list.
 
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+Got it. I've added this task:
+[E][ ] attend CS2113T lecture (at: Friday 4-6pm)
+Now you have 3 tasks in the list.
 ```
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+### **command:** `list`
 
-### Jekyll Themes
+**Format:** `list` - Show all tasks
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ibrahimisramos/ip/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+**Description of command :**  list all tasks with its status
+Example of usage: 
 
-### Support or Contact
+`list`
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+Expected outcome:
+
+All tasks, its status and total number of tasks in list.
+
+```
+Here are the tasks in your list:
+1.[T][ ] read book
+2.[D][ ] return book (by: Oct 15 2019)
+3.[E][ ] attend CS2113T lecture (at: Friday 4-6pm)
+Now you have 3 tasks in the list.
+```
+
+### **command:** `find`
+
+**Format:** `find SEARCH_TERM` 
+
+**Description of command :**  Show all tasks with descriptions containing the search term
+Example of usage: 
+
+`find book`
+
+Expected outcome:
+
+All tasks matching search term
+
+```
+Here are the tasks in your list:
+1.[T][ ] read book
+2.[D][ ] return book (by: Oct 15 2019)
+Now you have 2 tasks in the list.
+```
+
+### **command:** `mark`
+
+**Format:** `mark TASK_NUM` 
+
+**Description of command :**  Mark task number in list as complete
+Example of usage: 
+
+`mark 2`
+
+Expected outcome:
+
+Task 2 will be marked as complete
+
+```
+[D][X] return book (by: Oct 15 2019)
+Nice! I've marked this task as done:
+```
+
+### **command:** `unmark`
+
+**Format:** `unmark TASK_NUM` 
+
+**Description of command :**  Mark task number in list as imcomplete
+Example of usage: 
+
+`umark 2`
+
+Expected outcome:
+
+Task 2 will be marked as incomplete
+
+```
+[D][ ] return book (by: Oct 15 2019)
+Ok I have marked this task as incomplete:
+```
+
+### **command:** `delete`
+
+**Format:** `delete TASK_NUM` 
+
+**Description of command :**  Delete task number in list
+Example of usage: 
+
+`delete 2`
+
+Expected outcome:
+
+Task 2 will deleted
+
+```
+Ok I have deleted this task as requested:
+```
+
+`list`
+```
+Here are the tasks in your list:
+1.[T][ ] read book
+2.[E][X] attend CS2113T lecture (at: Friday 4-6pm)
+```
+
+
+### **command:** `exit`
+
+**Format:** `exit` 
+**Description of command :**  Exit program and save list to file
+Example of usage: 
+
+`exit`
+
+Expected outcome:
+
+Says bye and exit program
+
+```
+Bye. Hope to see you again soon!
+
+Process finished with exit code 0
+
+```
+
+### **command:** `bye`
+
+**Format:** `bye` 
+**Description of command :**  Exit program 
+Example of usage: 
+
+`bye`
+
+Expected outcome:
+
+Says bye and exit program
+
+```
+Bye. Hope to see you again soon!
